@@ -1,0 +1,113 @@
+class Human:
+    def __init__(self, name):
+        self.name = name
+        self.money = 1000
+        self.hungry = 0
+        self.energy = 100
+        self.car = None
+        self.home = None
+
+    def earn_money(self):
+        if self.energy >= 30:
+            print("Вы заработали 200$")
+            self.money += 200
+            self.hungry += 20
+            self.energy -= 30
+        else:
+            print("У вас недостаточно энергии")
+
+    def eating(self):
+        if self.money >= 30:
+            print("Вы поели и уменьшили голод")
+            self.hungry =max(0, self.hungry - 60)
+            self.money -= 30
+        else:
+            print("У вас недостаточно средств")
+
+    def buying_car(self):
+        if self.car is None:
+            if self.money >= 3000:
+                print("Вы успешно купили машину!")
+                self.money -= 3000
+                self.car = "Есть"
+            else:
+                print("У вас не хватает средств")
+        else:
+            print("У вас уже есть машина")
+
+    def buying_house(self):
+        if self.home is None:
+            if self.money >= 10000:
+                print("Вы успешно купили дом!")
+                self.money -= 10000
+                self.home = "Есть"
+            else:
+                print("У вас не хватает средств")
+        else:
+            print("У вас уже есть дом")
+
+    def relax(self):
+        print("Вы отдохнули и набрались сил!")
+        self.energy =min(100, self.energy + 60)
+
+    def check(self):
+        if self.energy > 100:
+            self.energy = 100
+
+        if self.hungry >= 100:
+            print("Вы умерли от голода")
+            return False
+
+        if self.hungry < 0:
+            self.hungry = 0
+
+        if self.money < 0:
+            print("Вы банкрот")
+            return False
+
+        return True
+
+    def stats(self):
+         print(f"Количевство денег:{self.money}, уровень голода:{self.hungry}, количевство енергии:{self.energy}, наличие дома:{self.home}, наличие машины:{self.car}")
+
+    def choose_number(self):
+        print("Выберите действие:")
+        print("1. Работать")
+        print("2. Поесть")
+        print("3. Отдохнуть")
+        print("4. Купить дом(10000$)")
+        print("5. Купить машину(3000$)")
+        print("6. Выйти из игры")
+
+        choice = input("Ваш выбор:")
+        if choice == "1":
+            self.earn_money()
+        elif choice == "2":
+            self.eating()
+        elif choice == "3":
+            self.relax()
+        elif choice == "4":
+            self.buying_house()
+        elif choice == "5":
+            self.buying_car()
+        elif choice == "6":
+            print("Вы вышли из игры.")
+            return False
+        else:
+            print("Некорректный ввод, попробуйте снова.")
+            return True
+
+
+gamer= Human(input("Введите ваше имя: "))
+score_day = 0
+print(f"Добро пожаловать, {gamer.name}! ")
+
+while True:
+    print(f"День: {score_day}")
+    if not gamer.check():
+        break
+    if  gamer.choose_number() is False:
+        break
+    print("----" * 10)
+    gamer.stats()
+    score_day += 1
