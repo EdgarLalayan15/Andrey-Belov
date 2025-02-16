@@ -1,0 +1,72 @@
+class Book:
+    def __init__(self,title, author, year, available):
+        self.title = title
+        self.year = year
+        self.available = available
+        self.author = author
+
+    def __str__(self,):
+        availability = "В наличии" if self.available else "Отсутствует"
+        return f" Книга {self.author} {self.year} года ({availability})\n"
+
+book1 = Book("Почему я не шахтер?", "Михаила Рудковского ", 2023, True)
+book2 =  Book("Приключение Бибы и Бобы", "Боба Фишер", 1743, True)
+
+class User:
+    def __init__(self, name, user_id,):
+        self.name = name
+        self.user_id = user_id
+
+    def __str__(self):
+        return f"Пользователь: {self.name}, ID: {self.user_id}"
+
+user1 = User("Андрей Белов", "0.126.17.73")
+user2 = User("Роман Павлович", "15.3.128.7")
+print(book1, user1)
+print(book2, user2)
+
+class Library:
+    def __init__(self):
+        self.books = []
+        self.users = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def add_user(self, user):
+        self.users.append(user)
+
+    def borrow_book(self, user_id, book_title):
+        book = next((b for b in self.books if b.title == book_title), None)
+        if book and book.available:
+            book.available = False
+            print(f"{book_title} была взята пользователем {user_id}")
+        else:
+            print(f"Книга {book_title} недоступна")
+
+    def return_book(self, user_id, book_title):
+        book = next((b for b in self.books if b.title == book_title), None)
+        if book:
+            book.available = True
+            print(f"{book_title} была возвращена пользователем {user_id}")
+        else:
+            print(f"Книга {book_title} не найдена в библиотеке")
+
+    def list_available_books(self):
+        available_books = [book for book in self.books if book.available]
+        if available_books:
+            print("Доступные книги:")
+            for book in available_books:
+                print(book)
+        else:
+            print("Нет доступных книг")
+
+
+library = Library()
+library.add_book(book1)
+library.add_book(book2)
+library.add_user(user1)
+library.add_user(user2)
+
+library.list_available_books()
+
