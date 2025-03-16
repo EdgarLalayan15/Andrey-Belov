@@ -1,0 +1,185 @@
+.center-box{
+    display: grid;
+    margin-top: 50px;
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: center;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+}
+header{
+    border-radius: 8px;
+    background-color: lightgray;
+    height: 70px;
+    width:100%;
+    margin-top: 8px;
+    display: flex;
+    color: rgb(117, 203, 231);
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-color:darkblue;
+}
+.baza{
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.tover{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.con{
+    display: grid;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    grid-template-columns: 25fr 75fr;
+    height: 180px;
+
+
+}
+.con-image{
+    background-image: url(#);
+    background-color: gray;
+    border-radius: 8px 0 0 8px;
+}
+.con-image img{
+    width: 100%;
+    align-items: center;
+}
+.con-text{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-left: 8px;
+    background-color: blueviolet;
+    border-radius: 0 8px 8px 0;
+}
+.but-align{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.but-del{
+    text-align: center;
+    padding-top: 5px;
+    margin: 3%;
+    background-color: red;
+    border-radius: 8px;
+}
+.but-buy{
+    padding-top: 15px;
+    text-align: center;
+    margin: 3%;
+    background-color: green;
+    border-radius: 8px;
+}
+.money{
+    border-radius:8px;
+    display: grid;
+    grid-template-columns: 86fr 6fr 8fr;
+    padding: 8px; 
+    width: auto;
+}
+.sum{
+    background-color: rgb(190, 238, 190);
+    color: green;
+    padding: 8px;
+    border-radius:6px 0 0 6px;
+    text-align: start;
+}
+.dol{
+    padding: 8px;
+    background-color: rgb(175, 174, 174);
+    
+}
+.num{
+    padding: 8px;
+    background-color:rgb(175, 174, 174);
+    border-radius: 0 6px 6px 0;
+    border-color: gray;
+}
+.login{
+    background-color: rgb(235, 233, 233);
+    padding-top: 14px;
+}
+.usename{
+    display: grid;
+    grid-template-columns: 5fr 95fr;
+    padding-right: 10px;
+}
+.dog{
+    background-color: rgb(214, 212, 212);
+    border-radius: 8px 0 0 8px;
+    padding: 8px;
+}
+.usename input{
+    width: auto;
+    padding: 4px;
+    padding-left: 8px;
+    border-radius: 0 8px 8px 0;
+}
+.email{
+    display: grid;
+}
+.rec_name{
+    width: auto;
+    display: grid;
+    padding-top: 16px;
+    padding-right: 10px;
+}
+.rec_name input{
+    border-radius:8px;
+    padding-left: 8px;
+    padding: 6px;
+}
+
+.YVU{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 8px;
+    padding-right: 10px;
+}
+
+.YVU input{
+    padding-left: 6px;
+    padding: 6px;
+}
+body strong{
+    text-align: left;
+}
+body h5{
+    text-align: start;
+    margin-bottom: 0;
+}
+.maine{
+    display: grid;
+    grid-template-columns: 5fr 90fr 5fr;
+    padding-top:16px;
+    padding-right: 10px;
+    
+}
+
+.maine input{
+    padding-top: 6px;
+
+}
+.maine .dol{
+    border-radius: 8px 0 0  8px;
+}
+.text{
+    display: grid;
+    grid-template-columns: 10fr 90fr;
+    padding-top: 16px;
+    padding-bottom:16px;
+    padding-right: 10px;
+}
+.l-text{
+    background-color:rgb(175, 174, 174);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
